@@ -1,0 +1,11 @@
+.con {
+  display: grid;
+  /* grid-template-rows: ; */
+  /* grid-template-columns: ; */
+  /* grid-auto-flow: ; */
+
+  /* grid-template-rows: 100px 100px;
+  grid-template-columns: 100px 100px; */
+  /* grid-auto-flow: row; */
+  grid: auto-flow repeat(2, 100px) / repeat(3, 1fr);
+}

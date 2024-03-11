@@ -1,0 +1,86 @@
+.sec1 {
+  border: 1px solid red;
+  background-color: #fcfcfc;
+}
+.sec1 h2 strong {
+  display: block;
+  text-align: center;
+  /* 중앙정렬 */
+  font-size: 3em;
+  /* 기본 폰트 16에 3배 */
+  line-height: 1.25;
+  /* 행간 넓히기 */
+  color: #888;
+}
+.sec1 h2 span {
+  color: purple;
+}
+
+.sec1 .cards {
+  /* ul 블럭*/
+  border: 1px solid red;
+  height: 350px;
+  /* 카드들 포지션 앱솔이라 ul이 감쌀 수가 없음 그러니 밑에 카드만큼 높이를 임의로 줌 */
+  /* display: flex; */
+  /* 리스트를 옆으로 나열하는 방법 : flex, 
+  밑에 li안에 display: inline; 하거나 
+  float: left;*/
+  /*justify-content: center;
+   중앙정렬 */
+  position: relative;
+}
+
+.sec1 .cards li {
+  /* ul안에 모든 li 블럭*/
+  border: 1px solid blue;
+  /* display: inline; */
+  /* float: left; */
+  position: absolute;
+  background-color: aliceblue;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 250px;
+  height: 350px;
+  border-radius: 20px;
+  padding: 20px;
+  transition: 0.5s;
+}
+
+/* 
+li에 float 쓴다면 밑에 둘 중 하나를 사용해 클리어를 해야 뒤에 옆으로 안생기고 밑으로 생김
+.cards {
+    overflow: hidden;
+}
+
+.sec3 {
+  clear: both;
+} */
+
+.sec1 .cards li:nth-of-type(1) {
+  transform: translateX(-100%) rotate(-20deg);
+}
+.sec1 .cards li:nth-of-type(2) {
+  transform: translateX(-80%) rotate(-10deg);
+}
+.sec1 .cards li:nth-of-type(3) {
+  transform: translateX(-50%) translateY(-5px);
+}
+.sec1 .cards li:nth-of-type(4) {
+  transform: translateX(-30%) rotate(10deg);
+}
+.sec1 .cards li:nth-of-type(5) {
+  transform: translateX(0%) translateY(30px) rotate(25deg);
+}
+.sec1:hover .cards li:nth-of-type(1) {
+  transform: translateX(-250%) rotate(15deg);
+}
+.sec1:hover .cards li:nth-of-type(2) {
+  transform: translateX(-150%) rotate(-15deg);
+}
+.sec1:hover .cards li:nth-of-type(4) {
+  transform: translateX(50%) rotate(15deg);
+}
+.sec1:hover .cards li:nth-of-type(5) {
+  transform: translateX(150%) rotate(-15deg);
+}

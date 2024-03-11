@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .con {
+        border: 1px solid red;
+        display: flex;
+        /* 옆으로 나란히 밑에 200을 주었는데도 창 사이즈가 줄어들면 본인을 줄임*/
+        /*flex-wrap: wrap;
+         플랙스 랩은 노랩이 기본값 */
+        /*flex-direction: row-reverse;
+        row 는 가로부터 column은 세로로 */
+        /*justify-content: center;
+          justify-content 메인 축(x축같음)에 관련한 정렬         #크로스축은 y축
+        */
+        /*justify-content: space-between;
+          양옆으로 정렬하고 사이에 일정한 거리를 만들어줌  */
+
+        /*justify-content: space-around;
+           위와 비슷 +양옆에 공간이 생김 */
+        /*justify-content: space-evenly;
+           위와 차이점을 잘 모르겠음 */
+        /*align-content: center;*/
+        width: 800px;
+        height: 100px;
+      }
+
+      .con > div {
+        /* .con > * 이렇게 적어도 됨 */
+        border: 3px solid lightblue;
+        /*width: 200px;
+        height: 150px;*/
+        /* 이 높이가 없다면 아이템이 밑으로 쭉 스트래치? 됨(늘어남) */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: calc(100% / 3);
+        flex-grow: 1;
+        /*증가비율 여백을 서로 1대1로 나눠 갖는다*/
+        flex-basis: 0;
+      }
+      .item1 {
+        order: -1;
+        flex-grow: 1;
+      }
+      .item2 {
+        flex-grow: 2;
+      }
+      .item3 {
+        flex-grow: 1;
+      }
+      /*1대 2대 1비율*/
+    </style>
+  </head>
+  <body>
+    <h1>flex !</h1>
+    <div class="con">
+      <div class="item1">item1</div>
+      <div class="item2">item2</div>
+      <div class="item3">item3</div>
+      <!-- <div class="item4">item4</div>
+      <div class="item5">item5</div>
+      <div class="item6">item6</div>
+      <div class="item7">item7</div>
+      <div class="item8">item8</div> -->
+    </div>
+  </body>
+</html>

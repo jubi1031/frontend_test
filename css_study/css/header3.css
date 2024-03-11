@@ -1,0 +1,220 @@
+@charset 'utf-8';
+
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Dongle&display=swap");
+
+@font-face {
+  font-family: "S-CoreDream-3Light";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "S-CoreDream-3Light";
+  /* 16px = 1rem */
+  font-weight: 900;
+  line-height: 1;
+  color: #888;
+  /* font: 20px/1.6 "Dongle", sans-serif; */
+  /* 속기형 크기? /라인하이트 글씨체 */
+}
+.wrap {
+  overflow: hidden;
+}
+.mw {
+  max-width: 1200px;
+  /* width값과 항상 같이 써주는게 좋다 */
+  width: calc(100% - 4rem);
+  margin: auto;
+  border: 1px solid red;
+}
+
+.hd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 999;
+}
+.hd h1 {
+  width: 120px;
+  /* 사진은 가로나 세로만 입력해야 깨지지 않음 */
+  padding: 1rem 0;
+  /* 공간을 주고 싶을 때 마진보다는 패딩을 먼저 줘보기 */
+}
+
+.hd .logo:hover {
+  opacity: 0.8;
+}
+
+.hd nav::before {
+  background-color: aliceblue;
+  content: "여기";
+  position: absolute;
+  top: 100%;
+  left: -500%;
+  width: 1000%;
+  height: 0px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.hd nav:hover::before {
+  /* 중첩할땐 호버를먼저 */
+  height: 120px;
+  opacity: 1;
+}
+.hd .gnb {
+  display: flex;
+}
+.hd .gnb a {
+  display: block;
+  white-space: nowrap;
+}
+
+.hd .gnb > li:hover > a {
+  color: red;
+  background-color: aliceblue;
+}
+
+.hd .gnb > li {
+  position: relative;
+  padding: 1rem 0;
+}
+
+.hd .gnb > li > a {
+  padding: 1rem 2rem;
+  font-family: "Black Han Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.hd .sub {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  text-align: center;
+  /* display: none; */
+  transition: opacity 0.5s;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+.hd .gnb:hover {
+  background-color: aliceblue;
+}
+.hd .gnb:hover .sub {
+  /* display: block; */
+  opacity: 1;
+  height: 120px;
+  /* 서브 메뉴를 보면 늘어나는데 이런걸 만들땐 auto보다는 일정 값을 주는게 좋음 */
+}
+
+.hd .sub a {
+  padding: 0.5rem;
+}
+
+.hd .func {
+  border: 1px solid red;
+  display: flex;
+  /* 밑에 에이의 크기를 여기크기와 맞게 변경이 됨 */
+}
+.hd .func a {
+  border: 1px solid lightblue;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  position: relative;
+  white-space: nowrap;
+}
+.hd .func a i {
+  font-size: 0.8em;
+  color: #999;
+  vertical-align: middle;
+  /* 텍스트레벨에만 쓰기 가능 써서 뒤에 글씨의 중간으로 바꿈 위에다가 플랙스 줘도 됨*/
+}
+.hd .func a::before {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  /* 위처럼 50퍼주고 트랜스폼으로 50퍼를 빼면 센터로 고정됨 */
+  height: 1px;
+  width: calc(100% - 2rem);
+  background-color: #999;
+  opacity: 0;
+}
+.hd .func a:hover::before {
+  opacity: 1;
+}
+.box {
+  width: 500px;
+  height: 500px;
+  border: 5px solid red;
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: nowrap; */
+  /* 기본값 노랩 */
+  justify-content: space-between;
+}
+
+.box > div {
+  border: 1px solid lightblue;
+  width: 100%;
+  /* flex: 1; */
+  /* 1,0,0 인 속기형 그로우 베이시스 쉬링크*/
+}
+
+.box1 {
+  width: 50px;
+  height: 50px;
+  border: 20px solid transparent;
+  /* 투명하게? */
+}
+
+.box1:hover {
+  border-top-color: red;
+  border-top-width: 20px;
+}
+.banner {
+  border: 1px solid red;
+  border-radius: 1rem;
+  width: 200px;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* a로 덮는 방법임 */
+  /* width: 100%;
+  height: 100%; */
+  color: transparent;
+}
+
+.ham {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  display: none;
+}
+.ham:hover,
+.ham:focus {
+  color: dodgerblue;
+}
+
+@media (max-width: 1000px) {
+  .hd nav,
+  .hd .func {
+    display: none;
+  }
+  .ham {
+    display: block;
+  }
+}

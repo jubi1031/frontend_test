@@ -1,0 +1,68 @@
+@charset 'utf-8';
+.test1 {
+  border: 1px solid red;
+  height: 600px;
+  margin: 100px 0;
+
+  /* background-image: url(banner1.jpg); */
+  background-image: url(lion.png), url("banner1.jpg");
+  background-repeat: no-repeat, repeat;
+  /* background-position: 100px 100px; */
+  background-size: 200px 100px, contain;
+  /* background-attachment: fixed; */
+  background-color: lightblue;
+}
+
+img {
+  width: 100%;
+}
+.sec1 {
+  width: 100%;
+  overflow: hidden;
+}
+.con {
+  border: 1px solid red;
+  display: flex;
+  width: 300%;
+}
+.con figure {
+  border: 5px solid lightblue;
+  width: calc(100% / 3);
+  height: 35vw;
+  position: relative;
+  overflow: hidden;
+}
+.con figure > * {
+  border: 1px solid lightgreen;
+  position: absolute;
+}
+
+.con figure h2 > * {
+  display: block;
+}
+.con figure strong {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.con figure figcaption {
+  z-index: 10;
+  color: white;
+  left: 60%;
+  top: 10%;
+  line-height: 1.6;
+}
+
+.con figure a {
+  left: 60%;
+  top: 80%;
+  background-color: white;
+  color: black;
+  width: 120px;
+  height: 40px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  text-transform: uppercase;
+}

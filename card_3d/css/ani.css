@@ -1,0 +1,52 @@
+.sec1 {
+  border: 1px solid red;
+  max-width: 800px;
+  width: 80%;
+  height: 50vh;
+  /* 보이는 웹브라우저의 50퍼 */
+  margin: auto;
+  position: relative;
+}
+
+.sec1::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: lightcyan;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  animation: ani1 2s ease 0.5s infinite alternate both;
+  /* animation-name: ani1;
+  animation-duration: 2s; */
+  /* animation-delay: 0.3s; */
+  /* animation-play-state: paused;
+  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); */
+  /* animation-iteration-count: infinite; */
+  /* 반복 */
+  /* animation-direction: alternate; */
+  /* 방향 리벌스는 역방향 alternate는 최소 2회 이상이어야함 
+  정방향으로갔다가 역방향으로 가는 것이 1회 */
+  /* animation-fill-mode: both; */
+  /* both //를 많이 씀  밑에 정해준 0퍼나 100퍼 값사이에서만 움직임
+  backwards //실행 후 원점으로 돌아옴
+  forwards //끝난 상태 그대로인듯? */
+}
+
+.sec1:hover::before {
+  animation-play-state: running;
+}
+
+@keyframes ani1 {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  100% {
+    top: 100%;
+    left: 100%;
+  }
+}

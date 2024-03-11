@@ -1,0 +1,45 @@
+.hd,
+.hd > * {
+  border: 1px solid red;
+}
+
+.hd {
+  width: 80%;
+  max-width: 1400px;
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hd ul {
+  display: flex;
+  border: 1px solid lightgreen;
+}
+
+.hd li {
+  border: 1px solid lightblue;
+}
+
+.hd a {
+  border: 1px solid lightcoral;
+  display: block;
+  padding: 1em 2em;
+}
+
+.hd .sub {
+  display: none;
+  position: absolute;
+}
+
+.hd a:hover {
+  background-color: beige;
+}
+
+.hd .gnb > li:hover .sub {
+  display: flex;
+}
+
+.func {
+  display: flex;
+}

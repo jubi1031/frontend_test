@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --gap1: 16px;
+  --point-c1: #e1f6ef;
+}
+.banner2 {
+  border: 1px solid red;
+  /* min-width: 400px; */
+  width: calc(100% - 32px);
+  max-width: 600px;
+  margin: 100px auto;
+  background-color: var(--point-c1);
+  border-radius: var(--gap1);
+  padding: calc(var(--gap1) * 2);
+  position: relative;
+  top: 0;
+  transition: 0.3s;
+  /* 위 트렌지션 하려면 기존 값이 있어야함 밑에 답을 적어놨으니 top의 원래 위치 0을 적어줌 */
+}
+
+.banner2 > * {
+  border: 1px solid red;
+}
+
+.banner2 img {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 20%;
+  transform: translateY(-50%);
+}
+.banner2 span {
+  color: darkcyan;
+  font-weight: bold;
+}
+.banner2 h3 {
+  width: calc(100% - (20% - 10px));
+  padding: var(--gap1) 0;
+}
+.banner2 a {
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  height: 40px;
+  display: inline-block;
+  border-radius: 20px;
+  padding: 0px 50px 0 20px;
+  line-height: 40px;
+  margin-right: 16px;
+  transition: 0.3s;
+  position: relative;
+  margin-bottom: 10px;
+  /* trnasition-all과 동일함 */
+
+  /*transition-property: background-color;
+  transition: background-color 1s;
+   백그라운드 컬러만 변경 */
+}
+
+.banner2 a:hover {
+  background-color: green;
+  color: white;
+}
+.banner2 a::before {
+  content: "\f061";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  border: 1px solid red;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  /* 원래는 탑 0 tranfrom은 없었는데 두개를 추가해서 수직 센터를 맞춤 */
+}
+.banner2:hover {
+  top: -10px;
+}
+
+.c1 {
+  color: blueviolet;
+}
+
+@media (max-width: 400px) {
+  .banner2 img {
+    transform: translateY(0);
+    top: auto;
+    bottom: 16px;
+    right: 16px;
+    width: 30%;
+  }
+}
+/* 400이하일때 모바일 버전이라고 생각*/
+/* @media 미디어 and () and () {}
+미디어는 기본이 all? 암튼 생략 가능 */

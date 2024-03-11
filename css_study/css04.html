@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- em - 상속퇸 폰트 사이즈의 배수
+        rem - root 지정된 폰트 사이즈의 배수
+        폰트 사이즈 설정 안했다면 기본값은 16
+     -->
+    <style>
+      .box1 {
+        border: 1px solid red;
+        /* min-width: 600px; */
+        /* 자주 안씀 */
+        /* width: calc((100% - 64px) / 2); */
+        width: 80%;
+        max-width: 1400px;
+        /* 적용할 수 있는 최대 사이즈 */
+        height: 100%;
+        margin: auto;
+      }
+      .box1 > * {
+        border: 1px solid lightblue;
+      }
+      .box1 div {
+        width: 50%;
+      }
+    </style>
+    <header class="box1">
+      <p>박스1_1</p>
+      <div>박스1_2</div>
+    </header>
+
+    <style>
+      :root {
+        font-size: 20px;
+        --size: 20px;
+        /* --뒤에  변수 입력*/
+      }
+      /* 기본적인 폰트가 20이다 */
+      .box2 {
+        font-size: 0.5rem;
+        /* 루트가  20이니까 0.5면 10 */
+        font-size: var(--size);
+        border: 1px solid red;
+        /* width: 100px; */
+        width: 10em;
+      }
+    </style>
+    test
+    <div class="box2">박스</div>
+  </body>
+</html>

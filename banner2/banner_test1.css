@@ -1,0 +1,91 @@
+.box1 {
+  border: 1px solid red;
+  width: 80%;
+  max-width: 1200px;
+  margin: 100px 0 0 100px;
+  /* overflow: hidden; */
+  position: relative;
+}
+.bannerCon {
+  border: 5px solid lightcoral;
+  overflow: hidden;
+}
+.listCon {
+  border: 1px solid lightblue;
+  display: flex;
+  width: 300%;
+}
+.listCon > li {
+  border: 3px solid lightgreen;
+  width: calc(100% / 3);
+}
+.listCon > li:nth-of-type(3) ~ li {
+  display: none;
+}
+.card {
+  position: relative;
+  padding-top: 30%;
+}
+.card > * {
+  position: absolute;
+  top: 0;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card .dec {
+  left: 60%;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+}
+.card .dec .more {
+  font-size: 0.7em;
+  display: inline-block;
+  padding: 1em 2em;
+  background-color: white;
+  border-radius: 100px;
+  text-transform: uppercase;
+  margin-top: 1em;
+}
+
+.box1 .btn,
+.box1 .pg {
+  position: absolute;
+}
+.box1 .btn {
+  background-color: transparent;
+  border: 1px solid;
+  outline: none;
+  width: 40px;
+  height: 40px;
+  top: -45px;
+  right: 0;
+}
+.box1 .btn.prev {
+  right: 45px;
+}
+.box1 .btn:hover {
+  background-color: beige;
+}
+.box1 .pg {
+  border: 1px solid lightgray;
+  left: 50%;
+  bottom: -30px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5em;
+}
+
+.box1 .pg span {
+  font-size: 0.5em;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

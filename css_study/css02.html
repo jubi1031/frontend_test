@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .box1,
+      .box2 {
+        border: 1px solid red;
+        width: 200px;
+        padding: 20px;
+      }
+      a.box2 {
+        display: block;
+        outline: none;
+        color: black;
+        text-decoration: none;
+      }
+      /* .box1:hover {
+        background-color: blanchedalmond;
+        width: 250px;   
+      } */
+      a.box2:focus {
+        border-width: 5px;
+        /* outline: none; */
+      }
+      a.box2:visited {
+        color: blueviolet;
+      }
+
+      .box3 {
+        display: block;
+        outline: none;
+        border: none;
+      }
+      .box3:hover,
+      .box3:focus {
+        background-color: beige;
+      }
+      #testlink {
+        background-color: lightcoral;
+        height: 50vh;
+      }
+    </style>
+    <div class="box1">여기에 마우스를 올려보시오</div>
+    <a href="#testlink" class="box2">링크요소다</a>
+    <input class="box3" type="text" />
+    <input class="box3" type="text" />
+    <!-- 인풋은 기본값으로 보더가 생성됨 1픽셀정도 -->
+    <hr style="height: 50vh" />
+    <!-- 50vh는 화면의 절반 -->
+    <div id="testlink">아래쪽</div>
+  </body>
+</html>

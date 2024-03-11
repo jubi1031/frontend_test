@@ -1,0 +1,85 @@
+.mw {
+  background-color: #3aa389;
+  max-width: 1200px;
+  width: calc(100% - 2rem);
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hd h1 {
+  width: 200px;
+}
+.hd .mw .gnb {
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+  padding: 0 50px;
+}
+
+.hd .mw .gnb a:hover {
+  color: lightgray;
+}
+
+.hd .mw .gnb li {
+  padding: 0 10px;
+}
+
+.hd .mw .gnb a {
+  color: white;
+}
+
+.gnb .sub {
+  border: 1px solid black;
+  border-radius: 1em;
+  opacity: 0;
+  padding: 10px;
+  background-color: white;
+  position: absolute;
+}
+
+.hd .mw .gnb .sub a {
+  display: block;
+  color: black;
+  padding: 10px 0;
+}
+
+.gnb:hover .sub {
+  opacity: 1;
+}
+.func {
+  border: 1px solid white;
+  border-radius: 20px;
+  width: 60px;
+  padding: 10px 20px;
+  position: relative;
+  overflow: hidden;
+}
+.func a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: white;
+}
+.func a:hover {
+  background-color: white;
+  color: black;
+}
+.ham {
+  background-color: transparent;
+  color: white;
+  border: none;
+  display: none;
+}
+@media (max-width: 1000px) {
+  .hd .gnb,
+  .hd .func {
+    display: none;
+  }
+  .ham {
+    display: block;
+  }
+}

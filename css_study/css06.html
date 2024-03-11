@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .con {
+        border: 1px solid red;
+        width: 550px;
+        height: 550px;
+        margin: 100px auto;
+        /* 중앙정렬 */
+      }
+      .con > div {
+        border: 1px solid lightblue;
+        width: 100px;
+        height: 100px;
+      }
+      .t1 {
+        position: static;
+        /* 스타틱 기본값 밑처럼 탑 레프트 포지션 위치 변경 불가 */
+      }
+      .t2 {
+        background-color: rgba(200, 100, 50, 0.8);
+        position: relative;
+        /* 상대값 움직여도 원래 있던 자리를 차지함 그래서 다른 애들이 밑으로 생김*/
+        top: 50px;
+        left: 50px;
+      }
+      .t3 {
+        background-color: rgba(100, 100, 150, 0.5);
+        position: absolute;
+        left: 100px;
+        /* 절대값 위로 떠서 밑에 있던 애들이 올라옴
+        절댓값
+        고정 이였는데
+        둘이 합쳐진것처럼 보임
+        */
+      }
+      .t4 {
+        background-color: antiquewhite;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+      }
+      .t5 {
+        background-color: red;
+        position: sticky;
+        top: 30px;
+      }
+    </style>
+    <div class="con con1">
+      <div class="t1">기본</div>
+      <div class="t2">상대값</div>
+      <div class="t3">절대값</div>
+      <div class="t4">고정</div>
+      <div class="t5">스티커</div>
+    </div>
+    <hr style="height: 200vh" />
+
+    <style>
+      .con2 div {
+        border: 1px solid lightgreen;
+        position: absolute;
+        padding: 1em;
+      }
+
+      .con2 div:nth-of-type(1) {
+        background-color: antiquewhite;
+        z-index: 1;
+      }
+      .con2 div:nth-of-type(2) {
+        background-color: lightcoral;
+        z-index: 10;
+      }
+      .con2 div:nth-of-type(3) {
+        background-color: lightblue;
+      }
+    </style>
+    <div class="con con2">
+      <div>test1</div>
+      <div>test2</div>
+      <div>test3</div>
+      <!-- 겹쳐있게된다면 가장 밑에 있는 test3이 제일 위에 있음 -->
+    </div>
+  </body>
+</html>

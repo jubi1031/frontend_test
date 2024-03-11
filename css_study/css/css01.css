@@ -1,0 +1,62 @@
+@import url("./css02.css");
+
+div {
+}
+div.box {
+}
+.box {
+}
+
+.box1 {
+}
+.box1.box2 {
+}
+.box1 .box2 {
+}
+/* 1의 자손 2를 의미 바로 위와 다름 */
+
+p {
+  color: green !important;
+}
+
+/* 인라인에 색이 있어서 빨강이어야 하지만 임폴턴트가 있어서 초록으로 변함 */
+
+p {
+  color: beige !important;
+}
+
+/* 위에 선언 했지만 밑에 있는게 우선으로 됨 결론은 베이지 */
+
+div#test.box {
+  background-color: aqua;
+}
+/* 암튼 노션에 css부분 우선순위 참고 */
+body > * > * {
+}
+/* 바디 아래 모든요소 하위의 모든요소 */
+
+.gnb {
+  border: 1px solid red;
+}
+
+.gnb > li {
+}
+
+.gnb li {
+}
+
+ul ul {
+}
+
+.gnb a + ul {
+}
+/* a요소에 인접한 ul (그 사이에 다르넥 있으면 안됨) */
+.gnb a ~ ul {
+}
+/* 아래 ul전부 선택해줌 */
+
+#test,
+.test2,
+h1 {
+}
+/* 위에 세개 다 해당한다는 뜻 */
